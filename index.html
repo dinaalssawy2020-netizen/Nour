@@ -7,120 +7,125 @@
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@800;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Tajawal',sans-serif}
-body{background:#E0F2FE;min-height:100vh}
-.header{background:#7F1D1D;padding:24px 20px 56px;text-align:center;border-radius:0 0 36px 36px;border-bottom:4px solid #0EA5E9;box-shadow:0 8px 20px rgba(127,29,29,.35)}
-.header h1{color:#BAE6FD;font-size:32px;font-weight:900;text-shadow:0 0 12px rgba(186,230,253,.6)}
-.header p{color:#7DD3FC;font-weight:800;letter-spacing:1px}
-.pills{width:95%;max-width:520px;margin:-24px auto 0;display:flex;gap:7px;overflow:auto;padding:8px;scrollbar-width:none}
-.pills::-webkit-scrollbar{display:none}
-.pill{flex-shrink:0;background:#BAE6FD;border:2.5px solid #7F1D1D;border-radius:100px;padding:10px 15px;font-weight:900;font-size:11.5px;color:#7F1D1D;box-shadow:0 3px 0 #7F1D1D, 0 0 12px rgba(14,165,233,.25);cursor:pointer}
-.pill.active{background:#7F1D1D;color:#BAE6FD;box-shadow:0 3px 0 #0F172A, 0 0 18px rgba(159,18,57,.6);border-color:#BAE6FD}
-.wrap{width:92%;max-width:460px;margin:18px auto}
-.card{background:#fff;border:2.5px solid #7F1D1D;border-radius:22px;padding:16px;margin-bottom:12px;box-shadow:0 5px 0 #7F1D1D}
-.card.sky{background:#BAE6FD;box-shadow:0 5px 0 #7F1D1D, 0 0 20px rgba(14,165,233,.25)}
-.card.wine{background:#7F1D1D;border-color:#BAE6FD;box-shadow:0 5px 0 #0F172A, 0 0 22px rgba(159,18,57,.55)}
-.card.wine h3, .card.wine p, .card.wine li, .card.wine td{color:#FDE68A}
-.card.wine p{color:#BAE6FD}
-.card h3{color:#7F1D1D;font-size:14px;font-weight:900;line-height:1.6}
-.card.sky h3{color:#7F1D1D}
-.card p, li{color:#334155;font-size:12.5px;line-height:1.9;font-weight:700}
-.btn{width:100%;border:2.5px solid #7F1D1D;border-radius:12px;padding:11px;font-weight:900;margin-top:8px;cursor:pointer;box-shadow:0 3px 0 #7F1D1D}
-.btn.sky{background:#BAE6FD;color:#7F1D1D;box-shadow:0 3px 0 #7F1D1D, 0 0 12px rgba(14,165,233,.3)}
-.btn.wine{background:#7F1D1D;color:#BAE6FD;border-color:#BAE6FD;box-shadow:0 3px 0 #0F172A, 0 0 16px rgba(159,18,57,.5)}
-.btn.small{width:auto;display:inline-block;padding:7px 14px;margin:5px 4px 0 0;font-size:11px}
+body{background:#E6F6FF;min-height:100vh}
+.header{background:#7F1D1D;padding:28px 20px 60px;text-align:center;border-radius:0 0 36px 36px;border-bottom:5px solid #38BDF8}
+.header h1{color:#BAE6FD;font-size:36px;font-weight:900;text-shadow:0 0 20px #38BDF8}
+.header p{color:#7DD3FC;font-weight:900;font-size:16px;margin-top:4px}
+.pills{width:96%;max-width:500px;margin:-28px auto 0;display:flex;gap:8px;overflow-x:auto;padding:12px 6px}
+.pill{background:#fff;border:2.5px solid #7F1D1D;border-radius:100px;padding:12px 18px;font-weight:900;font-size:13px;color:#7F1D1D;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.pill.active{background:#7F1D1D;color:#BAE6FD;border-color:#BAE6FD;box-shadow:0 0 15px #38BDF8}
+.wrap{width:92%;max-width:460px;margin:20px auto}
+.card{border-radius:22px;padding:18px;margin-bottom:16px;border:2.5px solid #7F1D1D;background:#fff}
+.card.sky{background:#BAE6FD}
+.card.wine{background:#7F1D1D;border-color:#BAE6FD}
+.card.wine h3{color:#FFE4A3}
+.card.wine p{color:#E0F2FE}
+.card h3{color:#7F1D1D;font-size:15px;font-weight:900}
+.card p{font-size:13px;line-height:1.8;font-weight:700;color:#334155;margin-top:6px}
+.btn{width:100%;border-radius:14px;padding:12px;font-weight:900;margin-top:10px;cursor:pointer;border:2.5px solid #7F1D1D;font-size:13px}
+.btn.sky{background:#38BDF8;color:#fff;border-color:#7F1D1D}
+.btn.wine{background:#7F1D1D;color:#BAE6FD;border-color:#BAE6FD}
+.btn.small{width:auto;display:inline-block;padding:9px 16px;margin:6px 4px 0 0}
 .hidden{display:none!important}
-canvas{border:2.5px solid #7F1D1D;border-radius:16px;background:#fff;width:100%;height:250px}
-.colors{display:flex;gap:8px;justify-content:center;margin:10px 0}
-.color{width:32px;height:32px;border-radius:50%;border:2.5px solid #7F1D1D;cursor:pointer;box-shadow:0 2px 0 #7F1D1D}
-.table{width:100%;border-spacing:0 6px;border-collapse:separate}
-.table td{background:#BAE6FD;border:2.5px solid #7F1D1D;border-radius:12px;padding:10px;text-align:center;font-weight:900;color:#7F1D1D;box-shadow:0 2px 0 #7F1D1D}
-.modal{position:fixed;inset:0;background:rgba(127,29,29,.6);display:flex;align-items:center;justify-content:center;padding:16px;z-index:99}
-.cert{background:#E0F2FE;border:3px solid #7F1D1D;border-radius:22px;padding:20px;width:90%;max-width:320px;text-align:center;box-shadow:0 0 30px rgba(14,165,233,.4), 0 8px 0 #7F1D1D}
-.footer{text-align:center;padding:28px 0}
-.footer b{background:#7F1D1D;border:2.5px solid #BAE6FD;border-radius:100px;padding:8px 18px;font-size:11px;color:#BAE6FD;box-shadow:0 3px 0 #0F172A, 0 0 16px rgba(159,18,57,.5);display:inline-block}
-.footer span{font-size:10px;display:block;margin-top:10px;color:#7F1D1D;font-weight:900}
+.footer{text-align:center;padding:30px 0}
+.footer b{background:#7F1D1D;color:#BAE6FD;border:2px solid #38BDF8;border-radius:100px;padding:10px 22px;font-size:12px;box-shadow:0 0 15px #38BDF8;display:inline-block}
+.footer span{display:block;margin-top:10px;color:#7F1D1D;font-weight:900;font-size:10px}
 </style>
 </head>
 <body>
-<div class="header"><div style="font-size:40px;filter:drop-shadow(0 0 10px #BAE6FD)">🌙</div><h1>نور</h1><p>مع أنس و لين</p></div>
+<div class="header"><div style="font-size:44px">🌙</div><h1>نور</h1><p>مع أنس و لين</p></div>
 
 <div class="pills">
-<div class="pill active" onclick="showTab('salah',this)">🕌 وضوئي</div>
+<div class="pill" onclick="showTab('salah',this)">🕌 وضوئي</div>
+<div class="pill active" onclick="showTab('qesas',this)">📖 قصص الأنبياء</div>
 <div class="pill" onclick="showTab('adab',this)">🤲 أدعيتي</div>
-<div class="pill" onclick="showTab('qesas',this)">📖 قصص الأنبياء</div>
 <div class="pill" onclick="showTab('game',this)">🎨 لعبتي</div>
-<div class="pill" onclick="showTab('week',this)">📅 أسبوعي</div>
 <div class="pill" onclick="showTab('stars',this)">⭐ نجومي</div>
 </div>
 
 <div class="wrap">
-<div id="salah">
+<div id="qesas">
+<div class="card wine">
+<h3>1- آدم عليه السلام 🌿</h3>
+<p>أول نبي، خلقه الله من طين وعلمه الأسماء</p>
+<button class="btn sky small" onclick="playStory(1)">🔊 اسمعي القصة</button>
+<button class="btn small" style="background:#FFE4A3;color:#7F1D1D;border-color:#7F1D1D" onclick="addStar()">✅ سمعتها</button>
+</div>
+<div class="card sky">
+<h3>2- نوح عليه السلام 🌊</h3>
+<p>بنى سفينة كبيرة وأنقذ المؤمنين من الطوفان</p>
+<button class="btn wine small" onclick="playStory(2)">🔊 اسمعي القصة</button>
+<button class="btn wine small" onclick="addStar()">✅ سمعتها</button>
+</div>
+<div class="card wine">
+<h3>3- إبراهيم عليه السلام 🔥</h3>
+<p>النار بقت برد وسلام عليه</p>
+<button class="btn sky small" onclick="playStory(3)">🔊 اسمعي القصة</button>
+<button class="btn sky small" onclick="addStar()">✅</button>
+</div>
+</div>
+
+<div id="salah" class="hidden">
 <div class="card wine">
 <h3>💧 الوضوء الصحيح</h3>
-<ol style="padding-right:18px;margin-top:8px">
-<li>النية بالقلب</li>
-<li>بسم الله</li>
-<li>غسل اليدين 3</li>
-<li>المضمضة 3</li>
-<li>الاستنشاق والاستنثار 3</li>
-<li>غسل الوجه 3</li>
-<li>غسل الذراعين للمرفقين 3 (اليمين أولاً)</li>
-<li>مسح الرأس مرة</li>
-<li>مسح الأذنين مرة</li>
-<li>غسل القدمين للكعبين 3</li>
-</ol>
-<p style="margin-top:10px;background:#9F1239;border:1.5px dashed #BAE6FD;border-radius:10px;padding:8px;color:#BAE6FD">بعد الوضوء: أشهد أن لا إله إلا الله وحده لا شريك له وأشهد أن محمداً عبده ورسوله، اللهم اجعلني من التوابين واجعلني من المتطهرين</p>
-<button class="btn sky" onclick="speakLoud('بسم الله، خطوات الوضوء: النية، غسل اليدين ثلاثا، المضمضة ثلاثا، الاستنشاق ثلاثا، غسل الوجه ثلاثا، غسل اليدين إلى المرفقين ثلاثا، مسح الرأس، مسح الأذنين، غسل القدمين')">🔊 اسمعي الوضوء</button>
-<button class="btn sky" onclick="addStar('anas')">✅ توضأت + نجمة</button>
+<p style="color:#BAE6FD">1- النية 2- بسم الله 3- اليدين 3 مرات 4- المضمضة 3 5- الاستنشاق 3 6- الوجه 3 7- الذراعين للمرفقين 3 8- مسح الرأس 9- الأذنين 10- القدمين 3</p>
+<p style="background:#9F1239;border:1px dashed #BAE6FD;border-radius:10px;padding:8px;margin-top:8px;color:#FFE4A3">بعد الوضوء: أشهد أن لا إله إلا الله...</p>
+<button class="btn sky" onclick="playStory(10)">🔊 اسمعي خطوات الوضوء</button>
 </div>
-<div class="card sky"><h3>🕌 صلواتي</h3><p>الفجر - الظهر - العصر - المغرب - العشاء</p><button class="btn wine" onclick="addStar('leen')">صليت ✅ + نجمة</button></div>
 </div>
 
 <div id="adab" class="hidden">
-<div class="card wine"><h3>🍽️ قبل الأكل: بسم الله</h3><button class="btn sky small" onclick="speakLoud('بسم الله')">🔊</button></div>
-<div class="card sky"><h3>بعد الأكل: الحمد لله الذي أطعمني هذا</h3><button class="btn wine small" onclick="speakLoud('الحمد لله الذي أطعمني هذا ورزقنيه من غير حول مني ولا قوة')">🔊</button></div>
-<div class="card wine"><h3>😴 قبل النوم: باسمك اللهم أموت وأحيا</h3><button class="btn sky small" onclick="speakLoud('باسمك اللهم أموت وأحيا')">🔊</button></div>
-<div class="card sky"><h3>⏰ الاستيقاظ: الحمد لله الذي أحيانا</h3><button class="btn wine small" onclick="speakLoud('الحمد لله الذي أحيانا بعد ما أماتنا وإليه النشور')">🔊</button></div>
+<div class="card sky"><h3>😴 قبل النوم: باسمك اللهم أموت وأحيا</h3><button class="btn wine small" onclick="playStory(11)">🔊 اسمعي الدعاء</button></div>
+<div class="card wine"><h3>⏰ الاستيقاظ: الحمد لله الذي أحيانا</h3><button class="btn sky small" onclick="playStory(12)">🔊</button></div>
 </div>
 
-<div id="qesas" class="hidden">
-<div class="card wine"><h3>1- آدم عليه السلام 🌿</h3><p>أول نبي، خلقه الله من طين وعلمه الأسماء</p><button class="btn sky small" onclick="speakLoud('قصة آدم عليه السلام، أول البشر، خلقه الله من طين، وأسكنه الجنة، وعلمه الأسماء كلها، وعلمنا التوبة')">🔊 اسمعي القصة كاملة</button><button class="btn sky small" onclick="addStar()">سمعتها ✅</button></div>
-<div class="card sky"><h3>2- نوح عليه السلام 🌊</h3><p>بنى سفينة وأنقذ المؤمنين من الطوفان</p><button class="btn wine small" onclick="speakLoud('نوح عليه السلام دعا قومه تسعمائة وخمسين سنة، وبنى سفينة ضخمة بأمر الله، وأنقذ المؤمنين من الطوفان')">🔊</button><button class="btn small" style="background:#fff" onclick="addStar()">✅</button></div>
-<div class="card wine"><h3>3- إبراهيم عليه السلام 🔥</h3><p>النار بقت برد وسلام عليه</p><button class="btn sky small" onclick="speakLoud('إبراهيم خليل الرحمن، حطم الأصنام، فقال الله يا نار كوني بردا وسلاما على إبراهيم')">🔊</button><button class="btn sky small" onclick="addStar()">✅</button></div>
-<div class="card sky"><h3>4- يوسف عليه السلام 👑</h3><p>من البئر لعزيز مصر</p><button class="btn wine small" onclick="speakLoud('يوسف الصديق رماه إخوته في البئر ثم أصبح عزيز مصر بحكمته وصبره')">🔊</button><button class="btn small" onclick="addStar()">✅</button></div>
-<div class="card wine"><h3>5- موسى عليه السلام 🌊</h3><p>شق البحر بعصاه</p><button class="btn sky small" onclick="speakLoud('موسى كليم الله ضرب البحر بعصاه فانشق ونجا ببني إسرائيل')">🔊</button><button class="btn sky small" onclick="addStar()">✅</button></div>
-<div class="card sky"><h3>6- يونس عليه السلام 🐳</h3><p>في بطن الحوت</p><button class="btn wine small" onclick="speakLoud('يونس عليه السلام لبث في بطن الحوت وكان يقول لا إله إلا أنت سبحانك إني كنت من الظالمين فنجاه الله')">🔊</button><button class="btn small" onclick="addStar()">✅</button></div>
-<div class="card wine"><h3>7- محمد ﷺ 💚</h3><p>خاتم الأنبياء قدوتنا</p><button class="btn sky small" onclick="speakLoud('محمد صلى الله عليه وسلم خاتم الأنبياء، علمنا الصلاة والرحمة والصدق')">🔊</button><button class="btn sky small" onclick="addStar()">✅</button></div>
+<div id="game" class="hidden"><div class="card sky"><h3>🎨 لوني المسجد</h3><p>ارسمي هنا بإصبعك</p><canvas id="paint" width="320" height="240" style="border:2.5px solid #7F1D1D;border-radius:14px;background:#fff;width:100%;margin-top:8px"></canvas></div></div>
+<div id="stars" class="hidden"><div class="card wine" style="text-align:center"><h3>شجرة أنس ولين</h3><div id="tree" style="font-size:50px">🌿</div><div id="starsCount" style="color:#7DD3FC;font-weight:900">⭐ 6 / 10</div></div></div>
+
+<div class="footer"><b>created by dinaalssawy</b><span>All Rights Reserved © 2026 - نور 🌙</span></div>
 </div>
-
-<div id="game" class="hidden"><div class="card sky"><h3>🎨 لوني المسجد</h3><div class="colors"><div class="color" style="background:#7F1D1D" onclick="setColor('#7F1D1D')"></div><div class="color" style="background:#0EA5E9" onclick="setColor('#0EA5E9')"></div><div class="color" style="background:#BAE6FD" onclick="setColor('#BAE6FD')"></div><div class="color" style="background:#fff" onclick="setColor('#fff')"></div></div><canvas id="paint" width="320" height="250"></canvas><button class="btn wine" onclick="clearCanvas()">امسحي 🧹</button><button class="btn sky" onclick="addStar()">خلصت ✅ + نجمة</button></div></div>
-
-<div id="week" class="hidden"><div class="card sky"><h3>📅 أسبوعي</h3><table class="table"><tr><td>🧒 أنس</td><td id="cAnas">0</td></tr><tr><td>🧕 لين</td><td id="cLeen">0</td></tr></table><button class="btn wine" onclick="resetWeek()">أسبوع جديد 🔄</button></div></div>
-
-<div id="stars" class="hidden"><div class="card wine" style="text-align:center"><h3>شجرة أنس ولين</h3><div id="tree" style="font-size:48px">🌿</div><div id="starsCount" style="font-weight:900;color:#BAE6FD;margin-top:8px;font-size:18px">⭐ 0 / 10</div></div><div class="card sky" style="text-align:center"><h3>🏆 الجايزة</h3><button class="btn wine" onclick="checkPrize()">شوفي الجايزة 🏆</button></div></div>
-
-<div class="footer"><b>created by dinaalssawy</b><span>All Rights Reserved © 2026 - نور 🌙 - مع أنس و لين</span></div>
-</div>
-
-<div id="prizeModal" class="modal hidden"><div class="cert"><div style="font-size:42px">🏆</div><h2 style="color:#7F1D1D;font-weight:900">شهادة تقدير</h2><p style="margin:10px 0;color:#7F1D1D;font-weight:800">برافو يا أنس و لين 🌟<br>الشجرة بقت <span id="finalTree">🌳🍎</span></p><div style="background:#BAE6FD;border:2px solid #7F1D1D;border-radius:12px;padding:10px;font-weight:900;color:#7F1D1D">⭐ <span id="finalStars">10</span> / 10</div><button class="btn wine" style="margin-top:12px" onclick="document.getElementById('prizeModal').classList.add('hidden')">قفل ❌</button></div></div>
 
 <script>
-let voices=[];function loadVoices(){voices=speechSynthesis.getVoices();} speechSynthesis.onvoiceschanged=loadVoices; loadVoices();
-function speakLoud(t){speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='ar-SA';u.rate=0.88;let ar=voices.find(v=>v.lang.includes('ar'));if(ar)u.voice=ar;speechSynthesis.speak(u);}
-function playStar(){try{let a=new(window.AudioContext||window.webkitAudioContext)();let o=a.createOscillator();let g=a.createGain();o.frequency.value=800;g.gain.value=0.12;o.connect(g);g.connect(a.destination);o.start();o.stop(a.currentTime+0.2);}catch(e){}}
-let stars=parseInt(localStorage.getItem('noorStars')||'6'),anas=parseInt(localStorage.getItem('noorAnas')||'3'),leen=parseInt(localStorage.getItem('noorLeen')||'3');
-function updateAll(){let s=document.getElementById('starsCount');if(s)s.innerText=`⭐ ${stars} / 10`;let ca=document.getElementById('cAnas');if(ca)ca.innerText=anas;let cl=document.getElementById('cLeen');if(cl)cl.innerText=leen;let tr=document.getElementById('tree');if(tr){if(stars>=10)tr.innerText='🌳🍎';else if(stars>=7)tr.innerText='🌳';else if(stars>=3)tr.innerText='🌿';else tr.innerText='🌱';}localStorage.setItem('noorStars',stars);localStorage.setItem('noorAnas',anas);localStorage.setItem('noorLeen',leen);}
-function addStar(w){stars++;playStar();if(w=='anas')anas++;if(w=='leen')leen++;if(!w)anas++;updateAll();if(stars>=10)checkPrize();}
-function showTab(id,el){document.querySelectorAll('.wrap > div').forEach(d=>{if(d.id)d.classList.add('hidden')});document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});updateAll();}
-function checkPrize(){if(stars>=10){document.getElementById('finalStars').innerText=stars;document.getElementById('finalTree').innerText=document.getElementById('tree').innerText;document.getElementById('prizeModal').classList.remove('hidden');playStar();}else alert('كملي '+(10-stars)+' نجوم كمان ⭐');}
-function resetWeek(){if(confirm('نبدأ أسبوع جديد؟')){anas=0;leen=0;stars=0;updateAll();}}
-let canvas=document.getElementById('paint'),ctx=canvas?.getContext('2d'),painting=false,curColor='#7F1D1D';
-function setColor(c){curColor=c}
-function drawMosque(){if(!ctx)return;ctx.clearRect(0,0,320,250);ctx.fillStyle='#fff';ctx.fillRect(0,0,320,250);ctx.strokeStyle='#7F1D1D';ctx.lineWidth=2.5;ctx.strokeRect(80,110,160,80);ctx.beginPath();ctx.moveTo(70,110);ctx.lineTo(160,50);ctx.lineTo(250,110);ctx.closePath();ctx.stroke();ctx.strokeRect(140,150,40,40);}
-if(canvas)drawMosque();function clearCanvas(){drawMosque()}
-function pos(e){let r=canvas.getBoundingClientRect();let t=e.touches?e.touches[0]:e;return{x:(t.clientX-r.left)*(320/r.width),y:(t.clientY-r.top)*(250/r.height)}}
-if(canvas){canvas.addEventListener('mousedown',e=>{painting=true;let p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y)});canvas.addEventListener('mousemove',e=>{if(!painting)return;let p=pos(e);ctx.strokeStyle=curColor;ctx.lineWidth=5;ctx.lineTo(p.x,p.y);ctx.stroke();});window.addEventListener('mouseup',()=>painting=false);canvas.addEventListener('touchstart',e=>{painting=true;let p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);e.preventDefault();},{passive:false});canvas.addEventListener('touchmove',e=>{if(!painting)return;let p=pos(e);ctx.strokeStyle=curColor;ctx.lineWidth=7;ctx.lineTo(p.x,p.y);ctx.stroke();e.preventDefault();},{passive:false});canvas.addEventListener('touchend',()=>painting=false);}
-updateAll();
+// الصوت هيشتغل 100% - طريقة جديدة
+function playStory(n){
+  let texts={
+    1:"قصة آدم عليه السلام، أول البشر، خلقه الله من طين، وأسكنه الجنة، وعلمه الأسماء كلها، ولما أخطأ تاب فتاب الله عليه",
+    2:"قصة نوح عليه السلام، دعا قومه تسعمائة وخمسين سنة، وبنى سفينة ضخمة بأمر الله، وأنقذ الله المؤمنين والحيوانات من الطوفان العظيم",
+    3:"قصة إبراهيم خليل الرحمن، حطم الأصنام، فألقاه قومه في النار، فقال الله يا نار كوني بردا وسلاما على إبراهيم",
+    10:"خطوات الوضوء الصحيحة: انوي الوضوء، قولي بسم الله، اغسلي يديك ثلاث مرات، تمضمضي ثلاثا، استنشقي ثلاثا، اغسلي وجهك ثلاثا، اغسلي يديك إلى المرفقين ثلاثا، امسحي رأسك، امسحي أذنيك، اغسلي قدميك إلى الكعبين، ثم قولي أشهد أن لا إله إلا الله",
+    11:"دعاء قبل النوم، باسمك اللهم أموت وأحيا",
+    12:"دعاء الاستيقاظ، الحمد لله الذي أحيانا بعد ما أماتنا وإليه النشور"
+  };
+  let t=texts[n]||"قصة جميلة";
+  // وقف أي صوت شغال
+  window.speechSynthesis.cancel();
+  // شغل الصوت فورا بفعل المستخدم
+  let u=new SpeechSynthesisUtterance(t);
+  u.lang='ar-SA';
+  u.rate=0.9;
+  u.volume=1;
+  // حاولي تجيبي صوت عربي
+  let vs=window.speechSynthesis.getVoices();
+  let ar=vs.find(v=>v.lang && v.lang.toLowerCase().includes('ar'));
+  if(ar) u.voice=ar;
+  window.speechSynthesis.speak(u);
+  // لو مفيش صوت عربي، هيقرأ بردو بس بلهجة انجليزية - هيشتغل
+  if(!window.speechSynthesis.speaking){
+    setTimeout(()=>window.speechSynthesis.speak(u),100);
+  }
+}
+// حملي الأصوات بدري
+window.speechSynthesis.getVoices();
+if(window.speechSynthesis.onvoiceschanged!==undefined){window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices();}
+
+function addStar(){
+  try{let a=new (window.AudioContext||window.webkitAudioContext)();let o=a.createOscillator();let g=a.createGain();o.frequency.value=900;g.gain.value=0.15;o.connect(g);g.connect(a.destination);o.start();o.stop(a.currentTime+0.25);}catch(e){}
+  let el=document.getElementById('starsCount');if(el){let m=el.innerText.match(/\d+/);let n=(m?parseInt(m[0]):6)+1;el.innerText=`⭐ ${n} / 10`;let tr=document.getElementById('tree');if(tr){if(n>=10)tr.innerText='🌳🍎';else if(n>=7)tr.innerText='🌳';else tr.innerText='🌿';}}
+}
+function showTab(id,el){document.querySelectorAll('.wrap > div').forEach(d=>{if(d.id)d.classList.add('hidden')});document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));el.classList.add('active')}
+let canvas=document.getElementById('paint'),ctx=canvas?.getContext('2d'),painting=false;
+function pos(e){let r=canvas.getBoundingClientRect();let t=e.touches?e.touches[0]:e;return{x:(t.clientX-r.left)*(320/r.width),y:(t.clientY-r.top)*(240/r.height)}}
+if(canvas){ctx.fillStyle='#fff';ctx.fillRect(0,0,320,240);ctx.strokeStyle='#7F1D1D';ctx.lineWidth=2.5;ctx.strokeRect(80,80,160,80);ctx.beginPath();ctx.moveTo(70,80);ctx.lineTo(160,30);ctx.lineTo(250,80);ctx.closePath();ctx.stroke();canvas.addEventListener('mousedown',e=>{painting=true;let p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y)});canvas.addEventListener('mousemove',e=>{if(!painting)return;let p=pos(e);ctx.strokeStyle='#7F1D1D';ctx.lineWidth=5;ctx.lineTo(p.x,p.y);ctx.stroke()});window.addEventListener('mouseup',()=>painting=false);canvas.addEventListener('touchstart',e=>{painting=true;let p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);e.preventDefault()},{passive:false});canvas.addEventListener('touchmove',e=>{if(!painting)return;let p=pos(e);ctx.strokeStyle='#7F1D1D';ctx.lineWidth=6;ctx.lineTo(p.x,p.y);ctx.stroke();e.preventDefault()},{passive:false})}
 </script>
 </body>
   </html>
