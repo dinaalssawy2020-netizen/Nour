@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نور - NooR</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Tajawal',sans-serif}
+body{background:#FFF8E1;display:flex;justify-content:center;padding:20px}
+.phone{width:360px;background:#fff;border-radius:28px;overflow:hidden;border:3px solid #222;box-shadow:0 10px 0 #222}
+.header{background:#6DBE45;padding:18px;text-align:center;color:#fff}
+.tabs{display:flex;background:#f5f0d5;border-bottom:2px solid #222}
+.tabs span{flex:1;text-align:center;padding:12px 4px;font-size:11px;font-weight:700;cursor:pointer;color:#8a7f5a;border-left:1px solid #e6dfb5}
+.tabs span.active{background:#8B7CF8;color:#fff}
+.content{padding:16px;min-height:380px;background:#FFFEF5}
+.card{background:#fff;border:2px solid #222;border-radius:16px;padding:14px;margin-bottom:12px;box-shadow:0 4px 0 #222}
+.star-btn{background:#FFD93D;border:2px solid #222;border-radius:10px;padding:8px 12px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 3px 0 #222;margin-top:8px;width:100%}
+.hidden{display:none}
+.footer{text-align:center;padding:14px;font-size:10px;color:#8a7f5a;border-top:2px dashed #e6dfb5}
+#tree{font-size:50px}
+.app-icon{width:60px;height:60px;background:#6DBE45;border:3px solid #222;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 10px;box-shadow:0 4px 0 #222}
+</style>
+</head>
+<body>
+<div class="phone">
+<div class="header">
+<div class="app-icon">🌙</div>
+<h1>نور - NooR</h1>
+<p>مع أنس و لين</p>
+</div>
+<div class="tabs">
+<span class="active" onclick="showTab('salah',this)">🕌 صلاتي</span>
+<span onclick="showTab('adab',this)">🌸 أدبي</span>
+<span onclick="showTab('game',this)">🎮 لعبتي</span>
+<span onclick="showTab('stars',this)">⭐ نجومي</span>
+</div>
+<div class="content">
+<div id="salah">
+<div class="card"><h3>يلا نتوضأ يا أنس! 🧒</h3><p>ايدينا - وشنا - رجلينا</p><button class="star-btn" onclick="addStar()">توضأت ✅</button></div>
+<div class="card"><h3>صلاة العصر مع لين 🧕</h3><button class="star-btn" onclick="addStar()">صليت ✅</button></div>
+</div>
+<div id="adab" class="hidden">
+<div class="card"><h3>أدب الأكل - أنس 🍽️</h3><button class="star-btn" onclick="addStar()">عملته ✅</button></div>
+<div class="card"><h3>أدب السلام - لين 👋</h3><button class="star-btn" onclick="addStar()">عملته ✅</button></div>
+<div class="card"><h3>أدب النوم 😴</h3><button class="star-btn" onclick="addStar()">عملته ✅</button></div>
+</div>
+<div id="game" class="hidden">
+<div class="card"><h3>لوني المسجد 🎨</h3><button class="star-btn" onclick="addStar()">لونت ✅</button></div>
+</div>
+<div id="stars" class="hidden">
+<div class="card" style="text-align:center;background:#F3F0FF">
+<h3>شجرة أنس ولين</h3>
+<div id="tree">🌱</div>
+<div id="starsCount" style="margin-top:10px;font-weight:700">⭐ 0 / 10</div>
+<p id="treeMsg" style="font-size:11px;margin-top:6px;color:#666">اسقي الشجرة بالنجوم!</p>
+</div>
+</div>
+</div>
+<div class="footer">created by dinaalssawy<br>All Rights Reserved © 2026 - نور 🌙<br>مع أنس و لين</div>
+</div>
+<script>
+let stars=parseInt(localStorage.getItem('noorStars')||'0');
+function updateTree(){
+let tree=document.getElementById('tree');
+let msg=document.getElementById('treeMsg');
+document.getElementById('starsCount').innerText=`⭐ ${stars} / 10`;
+if(stars>=10){tree.innerText='🌳🍎';msg.innerText='طرحت تفاح!';}
+else if(stars>=7){tree.innerText='🌳';msg.innerText='بقت كبيرة!';}
+else if(stars>=3){tree.innerText='🌿';msg.innerText='بتكبر!';}
+else{tree.innerText='🌱';}
+}
+function addStar(){stars++;localStorage.setItem('noorStars',stars);updateTree();alert('برافو ⭐');}
+function showTab(id,el){document.querySelectorAll('.content > div').forEach(d=>d.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.tabs span').forEach(s=>s.classList.remove('active'));el.classList.add('active');if(id==='stars')updateTree();}
+updateTree();
+</script>
+</body>
+  </html>
