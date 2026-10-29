@@ -7,120 +7,160 @@
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Tajawal',sans-serif}
-body{background:#81D4FA;min-height:100vh}
-.header{background:#29B6F6;padding:24px 20px 60px;text-align:center;border-radius:0 0 36px 36px;border-bottom:3.5px solid #222}
-.header h1{font-size:32px;color:#01579B;font-weight:900}
-.header p{color:#01579B;font-weight:800}
-.pills{display:flex;gap:8px;padding:0 12px;margin-top:-26px;overflow:auto;justify-content:center;scrollbar-width:none}
-.pill{background:#FFEB3B;border:3px solid #222;border-radius:100px;padding:11px 18px;font-weight:900;font-size:12px;white-space:nowrap;cursor:pointer;box-shadow:0 4px 0 #222;color:#01579B}
-.pill.active{background:#01579B;color:#FFEB3B}
-.wrap{padding:20px 16px;max-width:520px;margin:0 auto}
-.card{background:#B2EBF2;border:3px solid #222;border-radius:26px;padding:20px;margin-bottom:16px;box-shadow:0 6px 0 #222}
-.card.yellow{background:#FFEB3B}
-.card h3{color:#01579B;font-weight:900}
-.card p{color:#01579B;font-weight:700;font-size:13px;margin-top:4px;opacity:.8}
-.btn{width:100%;background:#FFEB3B;border:3px solid #222;border-radius:16px;padding:13px;font-weight:900;margin-top:12px;box-shadow:0 5px 0 #222;cursor:pointer;color:#01579B}
-.btn.blue{background:#29B6F6;color:#fff}
-.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #222}
-.hidden{display:none}
-canvas{border:3px solid #222;border-radius:20px;background:#B2EBF2;width:100%;touch-action:none}
-.colors{display:flex;gap:10px;margin:12px 0;justify-content:center}
-.color{width:36px;height:36px;border-radius:50%;border:3px solid #222;cursor:pointer;box-shadow:0 3px 0 #222}
-.table{width:100%;border-collapse:separate;border-spacing:0 8px}
-.table td{background:#FFEB3B;border:3px solid #222;padding:12px;border-radius:14px;text-align:center;font-weight:900;color:#01579B;box-shadow:0 3px 0 #222}
-.modal{position:fixed;inset:0;background:rgba(1,87,155,.6);display:flex;align-items:center;justify-content:center;padding:20px;z-index:99}
-.cert{background:#FFEB3B;border:3.5px solid #222;border-radius:28px;padding:26px;text-align:center;box-shadow:0 10px 0 #222;max-width:360px;width:100%}
-/* توقيعك سماوي */
-.footer{text-align:center;padding:28px 0}
-.footer b{color:#01579B;background:#FFEB3B;border:3px solid #222;border-radius:100px;padding:8px 18px;box-shadow:0 4px 0 #222;display:inline-block;font-size:13px;font-weight:900}
-.footer span{color:#01579B;font-weight:900;font-size:11px;display:block;margin-top:12px}
-#tree{font-size:60px;text-align:center}
+body{background:#FFF8E8;min-height:100vh;padding-bottom:20px}
+.header{background:#D6FFF5;padding:22px 20px 50px;text-align:center;border-radius:0 0 36px 36px;border-bottom:3px solid #222}
+.header h1{color:#2D4A3E;font-size:28px;font-weight:900}
+.header p{color:#5A7A6F;font-weight:800}
+.pills{width:95%;max-width:520px;margin:-22px auto 0;display:flex;gap:6px;overflow-x:auto;padding:8px;scrollbar-width:none;position:sticky;top:8px;z-index:10}
+.pills::-webkit-scrollbar{display:none}
+.pill{flex-shrink:0;background:#FFFFFF;border:2.5px solid #222;border-radius:100px;padding:9px 14px;font-weight:900;font-size:11px;box-shadow:0 3px 0 #222;color:#2D4A3E;cursor:pointer;transition:.15s}
+.pill.active{background:#FFD6BA;transform:translateY(2px);box-shadow:0 1px 0 #222}
+.wrap{width:92%;max-width:480px;margin:18px auto 0}
+.card{background:#FFFFFF;border:2.5px solid #222;border-radius:22px;padding:16px;margin:0 auto 12px;box-shadow:0 4px 0 #222;width:100%}
+.card.mint{background:#D6FFF5}
+.card.peach{background:#FFD6BA}
+.card h3{color:#2D4A3E;font-size:14px;font-weight:900;line-height:1.6}
+.card p, .card li{color:#3E6255;font-size:12px;font-weight:700;line-height:1.8}
+.btn{width:100%;background:#D6FFF5;border:2.5px solid #222;border-radius:12px;padding:10px;font-weight:900;font-size:12px;margin-top:8px;box-shadow:0 3px 0 #222;color:#2D4A3E;cursor:pointer}
+.btn.peach{background:#FFD6BA}
+.btn.small{width:auto;display:inline-block;padding:6px 12px;font-size:11px;margin:4px}
+.hidden{display:none!important}
+canvas{border:2.5px solid #222;border-radius:16px;background:#FFF;width:100%;height:260px;touch-action:none}
+.colors{display:flex;gap:8px;justify-content:center;margin:10px 0}
+.color{width:32px;height:32px;border-radius:50%;border:2.5px solid #222;box-shadow:0 2px 0 #222;cursor:pointer}
+.table{width:100%;border-collapse:separate;border-spacing:0 6px}
+.table td{background:#FFD6BA;border:2.5px solid #222;border-radius:12px;padding:10px;text-align:center;font-weight:900;color:#2D4A3E;font-size:12px;box-shadow:0 2px 0 #222}
+.modal{position:fixed;inset:0;background:rgba(45,74,62,.5);display:flex;align-items:center;justify-content:center;padding:16px;z-index:99}
+.cert{background:#FFF8E8;border:3px solid #222;border-radius:24px;padding:20px;width:92%;max-width:340px;text-align:center;box-shadow:0 8px 0 #222}
+.footer{text-align:center;padding:24px 0}
+.footer b{background:#D6FFF5;border:2.5px solid #222;border-radius:100px;padding:8px 16px;box-shadow:0 3px 0 #222;color:#2D4A3E;font-size:11px;display:inline-block}
+.footer span{display:block;margin-top:10px;color:#5A7A6F;font-weight:800;font-size:10px}
+#tree{font-size:52px;text-align:center}
+ol{padding-right:18px}
+.story-list{display:flex;flex-direction:column;gap:8px}
 </style>
 </head>
 <body>
-<div class="header"><div style="font-size:46px">🌙</div><h1>نور</h1><p>مع أنس و لين</p></div>
+<div class="header"><div style="font-size:36px">🌙</div><h1>نور</h1><p>مع أنس و لين</p></div>
 
 <div class="pills">
-<div class="pill active" onclick="showTab('salah',this)">🕌 صلاتي</div>
-<div class="pill" onclick="showTab('qesas',this)">📖 قصصي</div>
+<div class="pill active" onclick="showTab('salah',this)">🕌 وضوئي وصلاتي</div>
+<div class="pill" onclick="showTab('adab',this)">🤲 أدعيتي</div>
+<div class="pill" onclick="showTab('qesas',this)">📖 قصص الأنبياء</div>
 <div class="pill" onclick="showTab('game',this)">🎨 لعبتي</div>
 <div class="pill" onclick="showTab('week',this)">📅 أسبوعي</div>
 <div class="pill" onclick="showTab('stars',this)">⭐ نجومي</div>
 </div>
 
 <div class="wrap">
+<!-- وضوئي وصلاتي -->
 <div id="salah">
-<div class="card yellow"><h3>يلا نتوضأ يا أنس! 🧒</h3><p>ايدينا - وشنا - رجلينا</p><button class="btn blue" onclick="addStar('anas')">توضأت ✅ + نجمة 🔊</button></div>
-<div class="card"><h3>صلاة العصر مع لين 🧕</h3><button class="btn" onclick="addStar('leen')">صليت العصر ✅ + نجمة 🔊</button></div>
-<div class="card yellow"><h3>🌙 دعاء قبل النوم - ٦</h3><p>باسمك اللهم أموت وأحيا</p><button class="btn blue" onclick="speakDua()">🔊 اسمع الدعاء</button></div>
-<div class="card"><h3>أدب الأكل 🍽️ - أدب السلام 👋 - أدب النوم 😴</h3><button class="btn" onclick="addStar()">عملت الأدب ✅ + نجمة</button></div>
+<div class="card mint">
+<h3>💧 خطوات الوضوء الصحيحة</h3>
+<ol>
+<li>النية: أنوي الوضوء للصلاة بقلبي</li>
+<li>أقول: بسم الله</li>
+<li>أغسل إيدي 3 مرات</li>
+<li>أتمضمض 3 مرات</li>
+<li>أستنشق الماء وأنظّف أنفي 3 مرات</li>
+<li>أغسل وشي كله 3 مرات</li>
+<li>أغسل إيدي لحد الكوع 3 مرات - اليمين الأول</li>
+<li>أمسح راسي مرة واحدة</li>
+<li>أمسح وداني مرة</li>
+<li>أغسل رجلي لحد الكعب 3 مرات</li>
+</ol>
+<p style="margin-top:8px;background:#FFD6BA;border-radius:10px;padding:8px;border:2px dashed #222">بعد الوضوء أقول: أشهد أن لا إله إلا الله وأشهد أن محمداً عبده ورسوله، اللهم اجعلني من التوابين واجعلني من المتطهرين</p>
+<button class="btn small peach" onclick="speak('بسم الله، خطوات الوضوء: اغسل يديك ثلاث مرات، تمضمض، استنشق، اغسل وجهك، يديك الى المرفقين، امسح رأسك، وامسح أذنيك، واغسل قدميك')">🔊 اسمعي الخطوات</button>
+<button class="btn peach" onclick="addStar('anas')">توضأت صح ✅ + نجمة 🔊</button>
 </div>
 
+<div class="card peach">
+<h3>🕌 صلواتي اليوم</h3>
+<p>الفجر - الظهر - العصر - المغرب - العشاء</p>
+<button class="btn" onclick="addStar('leen')">صليت ✅ + نجمة</button>
+<button class="btn small" onclick="speak('اللهم اجعلني مقيم الصلاة ومن ذريتي ربنا وتقبل دعاء')">🔊 دعاء المحافظة على الصلاة</button>
+</div>
+</div>
+
+<!-- أدعيتي -->
+<div id="adab" class="hidden">
+<div class="card"><h3>🍽️ دعاء قبل الأكل</h3><p>بسم الله</p><button class="btn small" onclick="speak('بسم الله')">🔊</button></div>
+<div class="card mint"><h3>🍽️ دعاء بعد الأكل</h3><p>الحمد لله الذي أطعمني هذا ورزقنيه من غير حول مني ولا قوة</p><button class="btn small peach" onclick="speak('الحمد لله الذي أطعمني هذا ورزقنيه من غير حول مني ولا قوة')">🔊 اسمعي</button></div>
+<div class="card"><h3>🚪 دعاء دخول البيت</h3><p>بسم الله ولجنا وبسم الله خرجنا وعلى الله ربنا توكلنا</p><button class="btn small" onclick="speak('بسم الله ولجنا وبسم الله خرجنا وعلى الله ربنا توكلنا')">🔊</button></div>
+<div class="card mint"><h3>😴 دعاء قبل النوم</h3><p>باسمك اللهم أموت وأحيا</p><button class="btn small peach" onclick="speak('باسمك اللهم أموت وأحيا')">🔊</button></div>
+<div class="card peach"><h3>⏰ دعاء الاستيقاظ</h3><p>الحمد لله الذي أحيانا بعد ما أماتنا وإليه النشور</p><button class="btn small" onclick="speak('الحمد لله الذي أحيانا بعد ما أماتنا وإليه النشور')">🔊</button></div>
+<div class="card"><h3>👋 دعاء السلام</h3><p>السلام عليكم ورحمة الله وبركاته</p><button class="btn small" onclick="addStar()">عملته ✅ + نجمة</button></div>
+</div>
+
+<!-- قصص الأنبياء مسموعة -->
 <div id="qesas" class="hidden">
-<div class="card yellow"><h3>قصة اليوم: نوح عليه السلام 🌊</h3><p style="line-height:1.9;margin-top:8px">كان سيدنا نوح طيب جداً، بنى سفينة كبيرة عشان ينقذ الناس والحيوانات. ربنا بيحب اللي بيسمع الكلام. إيه رأيك يا أنس ويا لين نحكيها قبل النوم؟</p><button class="btn blue" onclick="addStar()">سمعت القصة ✅ + نجمة 🔊</button></div>
-<div class="card"><h3>قصة بكرة: الفيل 🐘</h3><p>هنعرف ليه ربنا حما الكعبة</p></div>
+<div class="story-list">
+<div class="card mint"><h3>1- آدم عليه السلام 🌿</h3><p>أول نبي، ربنا خلقه من طين وعلمه الأسماء كلها</p><button class="btn small peach" onclick="speak('قصة آدم عليه السلام، أول نبي خلقه الله من طين، وأسكنه الجنة، وعلمه الأسماء كلها، وعلمنا التوبة')">🔊 اسمعي القصة</button><button class="btn small" onclick="addStar()">سمعتها ✅</button></div>
+<div class="card"><h3>2- نوح عليه السلام 🌊</h3><p>بنى السفينة الكبيرة وأنقذ الناس والحيوانات</p><button class="btn small" onclick="speak('نوح عليه السلام بنى سفينة كبيرة جدا بأمر الله، وأنقذ المؤمنين والحيوانات من الطوفان')">🔊</button><button class="btn small peach" onclick="addStar()">سمعتها ✅</button></div>
+<div class="card peach"><h3>3- إبراهيم عليه السلام 🔥</h3><p>خليل الرحمن، النار بقت برد وسلام عليه</p><button class="btn small" onclick="speak('إبراهيم خليل الرحمن، كسر الأصنام، ورموه في النار، فجعلها الله بردا وسلاما عليه')">🔊</button><button class="btn small" onclick="addStar()">سمعتها ✅</button></div>
+<div class="card"><h3>4- يوسف عليه السلام 👑</h3><p>من البئر للعزيز، وحلم الملك</p><button class="btn small peach" onclick="speak('يوسف الصديق، رماه إخوته في البئر، ثم أصبح عزيز مصر بحلمه وصبره')">🔊</button><button class="btn small" onclick="addStar()">سمعتها ✅</button></div>
+<div class="card mint"><h3>5- موسى عليه السلام 🌊</h3><p>شق البحر بعصاه</p><button class="btn small" onclick="speak('موسى كليم الله، شق البحر بعصاه وأنقذ بني إسرائيل من فرعون')">🔊</button><button class="btn small peach" onclick="addStar()">سمعتها ✅</button></div>
+<div class="card"><h3>6- سليمان عليه السلام 🐜</h3><p>بيكلم الحيوانات والجن</p><button class="btn small peach" onclick="speak('سليمان عليه السلام كان يفهم كلام النمل والطير، وسخر الله له الجن والريح')">🔊</button><button class="btn small" onclick="addStar()">سمعتها ✅</button></div>
+<div class="card peach"><h3>7- يونس عليه السلام 🐳</h3><p>في بطن الحوت ودعا ربه</p><button class="btn small" onclick="speak('يونس عليه السلام لبث في بطن الحوت، وقال لا إله إلا أنت سبحانك إني كنت من الظالمين')">🔊</button><button class="btn small" onclick="addStar()">سمعتها ✅</button></div>
+<div class="card mint"><h3>8- عيسى عليه السلام ✨</h3><p>بيشفي المرضى بإذن الله</p><button class="btn small" onclick="speak('عيسى عليه السلام كان يشفي المرضى ويحيي الموتى بإذن الله')">🔊</button><button class="btn small peach" onclick="addStar()">سمعتها ✅</button></div>
+<div class="card"><h3>9- محمد ﷺ 💚</h3><p>خاتم الأنبياء، قدوتنا</p><button class="btn small peach" onclick="speak('محمد صلى الله عليه وسلم خاتم الأنبياء، علمنا الصلاة والرحمة والصدق')">🔊</button><button class="btn small" onclick="addStar()">سمعتها ✅</button></div>
+</div>
 </div>
 
+<!-- لعبتي -->
 <div id="game" class="hidden">
-<div class="card yellow"><h3>🎨 لوني مسجد أنس ولين - ٣</h3><p>اختاري لون ولوني بصابعك</p>
+<div class="card"><h3>🎨 لوني مسجد أنس ولين</h3>
 <div class="colors">
-<div class="color" style="background:#29B6F6" onclick="setColor('#29B6F6')"></div>
-<div class="color" style="background:#FFEB3B" onclick="setColor('#FFEB3B')"></div>
-<div class="color" style="background:#01579B" onclick="setColor('#01579B')"></div>
-<div class="color" style="background:#FF5252" onclick="setColor('#FF5252')"></div>
+<div class="color" style="background:#2D4A3E" onclick="setColor('#2D4A3E')"></div>
+<div class="color" style="background:#FF8A65" onclick="setColor('#FF8A65')"></div>
+<div class="color" style="background:#D6FFF5" onclick="setColor('#4DB6AC')"></div>
+<div class="color" style="background:#FFD6BA" onclick="setColor('#FFB74D')"></div>
 </div>
-<canvas id="paint" width="320" height="320"></canvas>
-<button class="btn blue" onclick="clearCanvas()">امسحي 🧹</button>
-<button class="btn" onclick="addStar()">خلصت تلوين ✅ + نجمة 🔊</button>
+<canvas id="paint" width="320" height="260"></canvas>
+<button class="btn" onclick="clearCanvas()">امسحي 🧹</button>
+<button class="btn peach" onclick="addStar()">خلصت تلوين ✅ + نجمة 🔊</button>
 </div>
 </div>
 
+<!-- أسبوعي -->
 <div id="week" class="hidden">
-<div class="card yellow"><h3>📅 مين صلى أكتر الأسبوع ده؟ - ٥</h3>
-<table class="table"><tr><td>🧒 أنس</td><td id="cAnas">0</td></tr><tr><td>🧕 لين</td><td id="cLeen">0</td></tr></table>
-<p style="font-size:11px;margin-top:10px;opacity:.7">الجدول بيتحسب لوحده كل ما تدوسي + نجمة</p>
-<button class="btn blue" onclick="resetWeek()">ابدأي أسبوع جديد 🔄</button>
+<div class="card mint"><h3>📅 مين صلى أكتر الأسبوع ده؟</h3>
+<table class="table"><tr><td>🧒 أنس</td><td id="cAnas">0</td><td>⭐</td></tr><tr><td>🧕 لين</td><td id="cLeen">0</td><td>⭐</td></tr></table>
+<button class="btn peach" onclick="resetWeek()">أسبوع جديد 🔄</button>
 </div>
 </div>
 
+<!-- نجومي -->
 <div id="stars" class="hidden">
-<div class="card yellow" style="text-align:center"><h3>شجرة أنس ولين</h3><div id="tree">🌿</div><div id="starsCount" style="font-weight:900;margin-top:10px;color:#01579B;font-size:20px">⭐ 6 / 10</div></div>
-<div class="card" style="text-align:center"><h3>🏆 الجايزة - ٧</h3><p>لما توصلي 10 نجوم هتطلع شهادة</p><button class="btn" onclick="checkPrize()">شوفي الجايزة 🏆</button></div>
+<div class="card peach" style="text-align:center"><h3>شجرة أنس ولين</h3><div id="tree">🌿</div><div id="starsCount" style="font-weight:900;color:#2D4A3E;font-size:20px;margin-top:8px">⭐ 6 / 10</div></div>
+<div class="card" style="text-align:center"><h3>🏆 الجايزة</h3><button class="btn peach" onclick="checkPrize()">شوفي الجايزة 🏆</button></div>
 </div>
 
-<div class="footer">
-<b>created by dinaalssawy</b>
-<span>All Rights Reserved © 2026 - نور 🌙 - مع أنس و لين</span>
-</div>
+<div class="footer"><b>created by dinaalssawy</b><span>All Rights Reserved © 2026 - نور 🌙 - مع أنس و لين</span></div>
 </div>
 
-<div id="prizeModal" class="modal hidden">
-<div class="cert">
-<div style="font-size:54px">🏆</div>
-<h2 style="color:#01579B;font-weight:900">شهادة تقدير</h2>
-<p style="margin:12px 0;line-height:1.8;font-weight:900;color:#01579B">برافو يا أنس و لين 🌟<br>الشجرة بقت <span id="finalTree">🌳🍎</span></p>
-<div style="background:#81D4FA;border:3px solid #222;border-radius:16px;padding:12px;margin:12px 0;font-weight:900;color:#01579B">⭐ <span id="finalStars">10</span> / 10 نجوم</div>
-<button class="btn blue" onclick="document.getElementById('prizeModal').classList.add('hidden')">قفل ❌</button>
-</div>
-</div>
+<div id="prizeModal" class="modal hidden"><div class="cert"><div style="font-size:48px">🏆</div><h2 style="color:#2D4A3E;font-weight:900">شهادة تقدير</h2><p style="margin:12px 0;line-height:1.8;font-weight:800;color:#2D4A3E">برافو يا أنس و لين 🌟<br>الشجرة بقت <span id="finalTree">🌳🍎</span></p><div style="background:#D6FFF5;border:2.5px solid #222;border-radius:14px;padding:12px;font-weight:900;color:#2D4A3E">⭐ <span id="finalStars">10</span> / 10</div><button class="btn peach" style="margin-top:14px" onclick="document.getElementById('prizeModal').classList.add('hidden')">قفل ❌</button></div></div>
 
 <script>
-function playStarSound(){try{let a=new(window.AudioContext||window.webkitAudioContext)();let o=a.createOscillator();let g=a.createGain();o.frequency.value=900;g.gain.value=0.12;o.connect(g);g.connect(a.destination);o.start();o.stop(a.currentTime+0.25);}catch(e){}}
-let stars=parseInt(localStorage.getItem('noorStars')||'6');let anas=parseInt(localStorage.getItem('noorAnas')||'3');let leen=parseInt(localStorage.getItem('noorLeen')||'3');
-function updateAll(){document.getElementById('starsCount').innerText=`⭐ ${stars} / 10`;document.getElementById('cAnas').innerText=anas;document.getElementById('cLeen').innerText=leen;let t=document.getElementById('tree');if(stars>=10)t.innerText='🌳🍎';else if(stars>=7)t.innerText='🌳';else if(stars>=3)t.innerText='🌿';else t.innerText='🌱';localStorage.setItem('noorStars',stars);localStorage.setItem('noorAnas',anas);localStorage.setItem('noorLeen',leen);}
+function playStarSound(){try{let a=new(window.AudioContext||window.webkitAudioContext)();let o=a.createOscillator();let g=a.createGain();o.frequency.value=720;g.gain.value=0.1;o.connect(g);g.connect(a.destination);o.start();o.stop(a.currentTime+0.2);}catch(e){}}
+function speak(t){let u=new SpeechSynthesisUtterance(t);u.lang='ar-SA';u.rate=0.9;speechSynthesis.cancel();speechSynthesis.speak(u);}
+let stars=parseInt(localStorage.getItem('noorStars')||'6'),anas=parseInt(localStorage.getItem('noorAnas')||'3'),leen=parseInt(localStorage.getItem('noorLeen')||'3');
+function updateAll(){let sc=document.getElementById('starsCount');if(sc)sc.innerText=`⭐ ${stars} / 10`;let ca=document.getElementById('cAnas');if(ca)ca.innerText=anas;let cl=document.getElementById('cLeen');if(cl)cl.innerText=leen;let tr=document.getElementById('tree');if(tr){if(stars>=10)tr.innerText='🌳🍎';else if(stars>=7)tr.innerText='🌳';else if(stars>=3)tr.innerText='🌿';else tr.innerText='🌱';}localStorage.setItem('noorStars',stars);localStorage.setItem('noorAnas',anas);localStorage.setItem('noorLeen',leen);}
 function addStar(who){stars++;playStarSound();if(who=='anas')anas++;if(who=='leen')leen++;if(!who)anas++;updateAll();if(stars>=10)checkPrize();}
-function showTab(id,el){document.querySelectorAll('.wrap > div').forEach(d=>{if(d.id)d.classList.add('hidden')});document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));el.classList.add('active');updateAll();}
-function speakDua(){let u=new SpeechSynthesisUtterance('باسمك اللهم اموت واحيا');u.lang='ar-SA';speechSynthesis.speak(u);}
+function showTab(id,el){document.querySelectorAll('.wrap > div').forEach(d=>{if(d.id)d.classList.add('hidden')});let target=document.getElementById(id);if(target)target.classList.remove('hidden');document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});updateAll();}
 function checkPrize(){if(stars>=10){document.getElementById('finalStars').innerText=stars;document.getElementById('finalTree').innerText=document.getElementById('tree').innerText;document.getElementById('prizeModal').classList.remove('hidden');playStarSound();}else alert('كملي '+(10-stars)+' نجوم كمان ⭐');}
 function resetWeek(){if(confirm('نبدأ أسبوع جديد؟')){anas=0;leen=0;stars=0;updateAll();}}
-let canvas=document.getElementById('paint');let ctx=canvas.getContext('2d');let painting=false;let curColor='#01579B';
+let canvas=document.getElementById('paint'),ctx=canvas?.getContext('2d'),painting=false,curColor='#2D4A3E';
 function setColor(c){curColor=c}
-function drawMosque(){ctx.clearRect(0,0,320,320);ctx.fillStyle='#B2EBF2';ctx.fillRect(0,0,320,320);ctx.strokeStyle='#222';ctx.lineWidth=3.5;ctx.strokeRect(80,150,160,100);ctx.beginPath();ctx.moveTo(70,150);ctx.lineTo(160,80);ctx.lineTo(250,150);ctx.closePath();ctx.stroke();ctx.strokeRect(140,190,40,60);}
-drawMosque();function clearCanvas(){drawMosque()}
-function pos(e){let r=canvas.getBoundingClientRect();let t=e.touches?e.touches[0]:e;return{x:(t.clientX-r.left)*(320/r.width),y:(t.clientY-r.top)*(320/r.height)}}
-canvas.addEventListener('mousedown',e=>{painting=true;let p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y)});canvas.addEventListener('mousemove',e=>{if(!painting)return;let p=pos(e);ctx.strokeStyle=curColor;ctx.lineWidth=7;ctx.lineTo(p.x,p.y);ctx.stroke();});window.addEventListener('mouseup',()=>painting=false);
-canvas.addEventListener('touchstart',e=>{painting=true;let p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);e.preventDefault();},{passive:false});canvas.addEventListener('touchmove',e=>{if(!painting)return;let p=pos(e);ctx.strokeStyle=curColor;ctx.lineWidth=9;ctx.lineTo(p.x,p.y);ctx.stroke();e.preventDefault();},{passive:false});canvas.addEventListener('touchend',()=>painting=false);
+function drawMosque(){if(!ctx)return;ctx.clearRect(0,0,320,260);ctx.fillStyle='#FFFFFF';ctx.fillRect(0,0,320,260);ctx.strokeStyle='#222';ctx.lineWidth=3;ctx.strokeRect(80,120,160,80);ctx.beginPath();ctx.moveTo(70,120);ctx.lineTo(160,60);ctx.lineTo(250,120);ctx.closePath();ctx.stroke();ctx.strokeRect(140,160,40,40);}
+if(canvas){drawMosque();}
+function clearCanvas(){drawMosque()}
+function pos(e){let r=canvas.getBoundingClientRect();let t=e.touches?e.touches[0]:e;return{x:(t.clientX-r.left)*(320/r.width),y:(t.clientY-r.top)*(260/r.height)}}
+if(canvas){
+canvas.addEventListener('mousedown',e=>{painting=true;let p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y)});canvas.addEventListener('mousemove',e=>{if(!painting)return;let p=pos(e);ctx.strokeStyle=curColor;ctx.lineWidth=6;ctx.lineTo(p.x,p.y);ctx.stroke();});window.addEventListener('mouseup',()=>painting=false);
+canvas.addEventListener('touchstart',e=>{painting=true;let p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);e.preventDefault();},{passive:false});canvas.addEventListener('touchmove',e=>{if(!painting)return;let p=pos(e);ctx.strokeStyle=curColor;ctx.lineWidth=8;ctx.lineTo(p.x,p.y);ctx.stroke();e.preventDefault();},{passive:false});canvas.addEventListener('touchend',()=>painting=false);
+}
 updateAll();
 </script>
 </body>
-</html>
+  </html>
